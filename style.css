@@ -53,7 +53,40 @@ body {
   transform: scale(1.2);
   color: #ff4081;
 }
+/* Desktop nav */
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem; /* moves nav closer to logo */
+  position: relative; /* needed for underline animation */
+}
 
+.nav a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  position: relative; /* needed for ::after underline */
+  transition: all 0.3s ease;
+}
+
+/* Desktop active link underline */
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ff69b4;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 80%;
+}
 /* Navigation links (desktop) */
 .nav {
   display: flex;
