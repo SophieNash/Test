@@ -32,9 +32,10 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 80px;
   width: auto;
   display: block;
+  max-width: 100%
 }
 
 /* Navigation Links */
@@ -223,7 +224,7 @@ textarea {
 /* ------------------- */
 /* Mobile Styles */
 @media (max-width: 768px) {
-
+  
   .menu-toggle {
     display: block;
   }
