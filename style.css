@@ -232,6 +232,11 @@ textarea {
   margin-top: 0.5rem;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* spacing between logo and nav */
+
 /* ------------------- */
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -246,10 +251,10 @@ textarea {
     position: fixed;
     top: 0;
     right: -250px; /* start offscreen */
-    background: #fff;
     width: 250px;
     height: 100%;
     padding: 2rem 1rem;
+    background: #fff;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
     z-index: 1002;
     transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
