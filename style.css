@@ -36,9 +36,16 @@ body {
 }
 
 .nav a {
-  color: #fff;
+  color: #ff69b4; /* pink links for visibility */
   text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
 }
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
 
 .menu-toggle {
   display: none;
