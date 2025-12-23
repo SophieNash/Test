@@ -228,19 +228,19 @@ textarea {
     display: block;
   }
 
+  /* Mobile nav offscreen initially */
   .nav {
     flex-direction: column;
     position: fixed;
     top: 0;
     right: -250px; /* start offscreen */
-    background: #ffffff;
+    background: #fff;
     width: 250px;
     height: 100%;
     padding: 2rem 1rem;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-    border-radius: 0;
     z-index: 1002;
-    transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* smooth easing */
+    transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
   .nav.show {
@@ -250,14 +250,29 @@ textarea {
   .nav a {
     padding: 1rem 0;
     font-size: 1.1rem;
+    color: #ff69b4;
   }
 
-  /* Overlay */
+  /* Overlay behind menu */
   .mobile-overlay {
-    display: block;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-  /* Cards stack vertically */
+  .mobile-overlay.show {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Cards stack vertically on mobile */
   .cards {
     grid-template-columns: 1fr;
   }
