@@ -1,50 +1,83 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sing & Sparkle</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <!-- CSS links (likely external stylesheets) -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/packages">Packages</a></li>
-        <li><a href="/princesses">Characters</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/tcs">T&Cs</a></li>
-        <li><a href="/privacy">Privacy</a></li>
-      </ul>
-      <a href="https://partypromanager.com">Book Now</a>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Sing & Sparkle</div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav class="nav" id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero / Welcome -->
-  <section id="hero">
-    <h1>Singing Princess Parties & Events</h1>
-    <p>Southampton, Chichester, Hampshire & Dorset</p>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h1>Magical Singing Princess Parties</h1>
+    <p>Making birthdays sparkle across Hampshire & Dorset</p>
+    <a href="#contact" class="btn">Book Now</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>Hello!</h2>
-    <p>Nice to meet you, we’re Sing & Sparkle! We are ...</p>
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>
+      Sing & Sparkle provides unforgettable princess parties filled with
+      singing, games, and magic. Our performers are professionally trained
+      singers who create memories your child will treasure forever.
+    </p>
   </section>
 
-  <!-- Social -->
-  <footer>
-    <p>Follow:</p>
-    <a href="https://www.instagram.com">Instagram</a>
-    <a href="https://www.facebook.com">Facebook</a>
-    <a href="https://www.tiktok.com">TikTok</a>
-    <p>Disclaimer: Sing & Sparkle is by no means affiliated with any other company or theme park.</p>
+  <!-- Packages -->
+  <section class="section light" id="packages">
+    <h2>Our Packages</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Sparkle Party</h3>
+        <p>45 minutes of singing, games & magic.</p>
+      </div>
+      <div class="card">
+        <h3>Deluxe Party</h3>
+        <p>60 minutes with coronation & party bags.</p>
+      </div>
+      <div class="card">
+        <h3>Ultimate Party</h3>
+        <p>90 minutes with two princesses!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Sing & Sparkle</p>
+    <p class="disclaimer">
+      Sing & Sparkle is not affiliated with Disney or any theme park.
+    </p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
 
