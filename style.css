@@ -322,98 +322,85 @@ textarea {
 }
 
 /* ------------------- */
-/* Mobile Styles */
 /* Mobile Styles (fixed) */
 @media (max-width: 768px) {
 
   /* Show hamburger only */
+  /* Hamburger button */
   .menu-toggle {
     display: block;
   }
-  .header-social {
-    display: none; /* hide header icons on mobile */
-  }
 
-.mobile-nav-social {
-  display: none;
-  margin-top: 2rem;
-  gap: 1rem;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
   /* Hide header social icons on mobile */
+  /* Hide desktop social icons */
   .header-social {
-    display: none; /* hide desktop header icons on mobile */
     display: none;
   }
 
-  .mobile-nav-social {
-    display: flex; /* show inside hamburger menu */
-  }
-}
-  /* Mobile nav offscreen initially */
   /* Full‑screen mobile nav */
+  /* Full-screen mobile nav */
   .nav {
     display: flex;
     flex-direction: column;
     justify-content: center;   /* vertically center links */
     align-items: center;       /* horizontally center */
+    justify-content: center;   /* vertical center */
+    align-items: center;       /* horizontal center */
     position: fixed;
     top: 0;
-    right: -250px; /* start offscreen */
-    width: 250px;
     right: -100%;              /* start offscreen right */
+    right: -100%;              /* offscreen initially */
     width: 100%;
     height: 100%;
-    padding: 2rem 1rem;
     padding: 0;                /* remove padding for full cover */
     background: #fff;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-    z-index: 1002;
-    transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    justify-content: flex-start; /* links at top */
     z-index: 1005;
     transition: right 0.3s ease;
+    overflow: hidden;
   }
 
   /* Slide menu in */
   .nav.show {
-    right: 0; /* slide in */
     right: 0;
   }
 
   /* Mobile nav links */
+  /* Mobile links with fade-in stagger */
   .nav > a {
-    display: block
-    padding: 1rem 0;
-    font-size: 1.1rem;
     display: block;
     width: 100%;
     text-align: center;
     padding: 1.5rem 0;
     font-size: 1.6rem;
     color: #ff69b4;
-    position: relative; /* needed for ::after underline */
-  }
-
-  /* Mobile active page highlight */
-  .nav a.active {
-    color: #ff4081
     text-decoration: none;
     position: relative;
+    opacity: 0;              /* start invisible */
+    transform: translateY(20px);
+    animation: fadeInLink 0.5s forwards;
   }
 
-  .nav a.active::after {
-        content: '';
   /* Active page underline + hover */
+  /* Stagger delays */
+  .nav.show > a:nth-child(1) { animation-delay: 0.1s; }
+  .nav.show > a:nth-child(2) { animation-delay: 0.2s; }
+  .nav.show > a:nth-child(3) { animation-delay: 0.3s; }
+  .nav.show > a:nth-child(4) { animation-delay: 0.4s; }
+  .nav.show > a:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes fadeInLink {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Active page underline */
   .nav a::after {
     content: '';
     position: absolute;
-    width: 0; /* underline for active link */
     width: 0;
     height: 2px;
-    bottom: 0;
     bottom: -6px;
     left: 50%;
     background-color: #ff69b4;
@@ -421,17 +408,17 @@ textarea {
     transition: width 0.3s ease;
   }
 
-    .nav a:hover::after,
   .nav a:hover::after,
   .nav a.active::after {
-    width: 80%;
     width: 60%;
   }
+
   .nav a.active {
     color: #ff4081;
   }
 
   /* Social icons at bottom of menu */
+  /* Mobile social icons at bottom */
   .mobile-nav-social {
     display: flex;
     gap: 1.5rem;
@@ -441,21 +428,21 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
   }
+
   .mobile-nav-social .social-link i {
     font-size: 26px;
     color: #ff69b4;
     transition: transform 0.3s ease, color 0.3s ease;
   }
+
   .mobile-nav-social .social-link:hover i {
     transform: scale(1.3);
     color: #ff4081;
   }
-}
 
-    /* Overlay behind menu */
   /* Mobile overlay behind menu */
+  /* Overlay */
   .mobile-overlay {
-    display: none;
     display: block;
     position: fixed;
     top: 0;
@@ -467,9 +454,7 @@ textarea {
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-
   .mobile-overlay.show {
-    display: block;
     opacity: 1;
   }
 }
