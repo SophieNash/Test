@@ -305,7 +305,7 @@ textarea {
 /* Mobile nav social */
 .mobile-nav-social {
   display: none; /* hide on desktop */
-  margin-top: 2rem;
+  margin-top: auto; /* push to bottom of slide-in nav */
   gap: 1rem;
   justify-content: center;
 }
@@ -345,10 +345,14 @@ textarea {
 
   .mobile-nav-social {
     display: flex; /* show inside hamburger menu */
+      gap: 1rem;
+  justify-content: center;
+  margin-top: auto;  
   }
 }
   /* Mobile nav offscreen initially */
   .nav {
+    display: flex
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -360,6 +364,7 @@ textarea {
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
     z-index: 1002;
     transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+     justify-content: flex-start; /* links at top, social icons at bottom via margin-top:auto */
   }
 
   .nav.show {
@@ -381,7 +386,7 @@ textarea {
   .nav a.active::after {
         content: '';
     position: absolute;
-    width: 0; /* underline for active link */
+    width: 80%; /* underline for active link */
     height: 2px;
     bottom: 0;
     left: 50%;
