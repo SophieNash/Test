@@ -302,7 +302,24 @@ textarea {
   transform: scale(1.2);
   color: #ff4081; /* optional hover color */
 }
+/* Mobile nav social */
+.mobile-nav-social {
+  display: none; /* hide on desktop */
+  margin-top: 2rem;
+  gap: 1rem;
+  justify-content: center;
+}
 
+.mobile-nav-social .social-link i {
+  font-size: 20px;
+  color: #ff69b4;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mobile-nav-social .social-link:hover i {
+  transform: scale(1.2);
+  color: #ff4081;
+}
 
 /* ------------------- */
 /* Mobile Styles */
@@ -310,7 +327,14 @@ textarea {
   .menu-toggle {
     display: block;
   }
+  .header-social {
+    display: none; /* hide header icons on mobile */
+  }
 
+  .mobile-nav-social {
+    display: flex; /* show inside hamburger menu */
+  }
+}
   /* Mobile nav offscreen initially */
   .nav {
     flex-direction: column;
