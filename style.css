@@ -20,6 +20,7 @@ body {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* logo left, menu toggle right */
   padding: 1rem 2rem;
   background: #ffffff;
   color: #333;
