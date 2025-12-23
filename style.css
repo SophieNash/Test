@@ -255,9 +255,26 @@ textarea {
     padding: 1rem 0;
     font-size: 1.1rem;
     color: #ff69b4;
+    position: relative; /* needed for ::after underline */
   }
 
-  /* Overlay behind menu */
+  /* Mobile active page highlight */
+  .nav a.active {
+    color: #ff4081
+  }
+
+  .nav a.active::after {
+        content: '';
+    position: absolute;
+    width: 80%; /* underline for active link */
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ff69b4;
+    transform: translateX(-50%);
+  }
+
+    /* Overlay behind menu */
   .mobile-overlay {
     display: none;
     position: fixed;
