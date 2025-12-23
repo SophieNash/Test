@@ -1,92 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OUAF Website</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Once Upon a Fairytale Princess Parties</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+  <!-- Header -->
   <header class="header">
+    <div class="header-left">
     <div class="logo">
-      <a href="index.html"><img src="logo.jpeg" alt="OUAF Logo"></a>
-    </div>
+      <a href="index.html">
+        <img src="logo.jpeg" alt="OUAF Logo">
+      </a>
+    </div> 
 
-    <!-- Desktop social icons -->
-    <div class="header-social">
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-
-    <!-- Hamburger -->
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <!-- Mobile menu -->
     <nav class="nav" id="navMenu">
       <a href="index.html" class="active">Home</a>
       <a href="packages.html">Packages</a>
       <a href="characters.html">Characters</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
+    </nav>
+   </div>
 
-      <!-- Mobile social icons at bottom -->
+       <!-- Social icons for mobile menu -->
       <div class="mobile-nav-social">
-        <a href="https://www.facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank" class="social-link">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
     </nav>
+    </div class="mobile-overlay" id="mobileOverlay"></header><div>
+  
+  </div>   
 
-    <!-- Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="header-right">
+    <div class="header-social">
+      <a href="https://www.facebook.com" target="_blank" class="social-link">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="social-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>  
+   <button class="menu-toggle" id="menuToggle">☰</button>
   </header>
 
-  <!-- Hero section -->
-  <section class="hero">
-    <h1>Welcome to OUAF</h1>
-    <p>Discover our characters, packages and events.</p>
-    <a href="packages.html" class="btn">View Packages</a>
+  <!-- Overlay for mobile menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h1>Welcome to Once Upon a Fairytale</h1>
+    <p>Making birthdays sparkle across Buckinghamshire and surrounding areas</p>
+    <a href="#contact" class="btn">Book Now</a>
   </section>
 
-  <!-- Example content -->
-  <section class="section light">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">Card 1</div>
-      <div class="card">Card 2</div>
-      <div class="card">Card 3</div>
-    </div>
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>
+      Once Upon a Fairytale provides unforgettable princess parties filled with
+      singing, games, and magic. Our performers are professionally trained
+      singers who create memories your child will treasure forever.
+    </p>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-logo">
-      <img src="logo.jpeg" alt="OUAF Logo">
-    </div>
-    <div class="footer-social">
-      <span>Follow:</span>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p class="disclaimer">© 2025 OUAF. All rights reserved.</p>
-  </footer>
+<footer class="footer">
+  <div class="footer-left">
+    <p>&copy; 2025 Once Upon a Fairytale</p>
+  </div>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-    const overlay = document.getElementById("mobileOverlay");
+  <div class="footer-center">
+    <img src="logo.jpeg" alt="OUAF Logo" class="footer-logo">
+  </div>
 
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-      overlay.classList.toggle("show");
-    });
+<div class="footer-right">
+  <p>Follow</p>
+  <a href="https://www.facebook.com" target="_blank" class="social-link">
+    <i class="fab fa-facebook-f social-icon"></i>
+  </a>
+  <a href="https://www.instagram.com" target="_blank" class="social-link">
+    <i class="fab fa-instagram social-icon"></i>
+  </a>
+</div>
+</footer>
 
-    overlay.addEventListener("click", () => {
-      navMenu.classList.remove("show");
-      overlay.classList.remove("show");
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
