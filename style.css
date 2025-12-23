@@ -16,10 +16,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: #ff69b4;
-  color: #fff;
+  background: #ffffff;
+  color: #333;
   position: sticky;
   top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional subtle shadow */
+  z-index: 1000; /* keeps header on top */
 }
 
 .logo img {
