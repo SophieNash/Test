@@ -22,9 +22,10 @@ body {
   top: 0;
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: bold;
+.logo img {
+  height: 50px; /* adjust as needed */
+  width: auto;
+  display: block;
 }
 
 .nav {
