@@ -20,7 +20,7 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo left, menu toggle right */
+  justify-content: space-between; /* logo+nav left, hamburger right */
   padding: 1rem 2rem;
   background: #ffffff;
   color: #333;
@@ -28,6 +28,13 @@ body {
   top: 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1001;
+}
+
+/* New container for logo + nav */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* space between logo and nav */
 }
 
 /* Logo */
@@ -93,6 +100,7 @@ body {
   font-size: 1.8rem;
   color: #ff69b4;
   cursor: pointer;
+  z-index: 1003;
 }
 
 /* ------------------- */
@@ -232,15 +240,9 @@ textarea {
   margin-top: 0.5rem;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem; /* spacing between logo and nav */
-
 /* ------------------- */
 /* Mobile Styles */
 @media (max-width: 768px) {
-  
   .menu-toggle {
     display: block;
   }
