@@ -349,6 +349,7 @@ textarea {
 }
   /* Mobile nav offscreen initially */
   .nav {
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -360,6 +361,7 @@ textarea {
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
     z-index: 1002;
     transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    justify-content: flex-start; /* links at top */
   }
 
   .nav.show {
