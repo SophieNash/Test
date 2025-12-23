@@ -331,6 +331,18 @@ textarea {
     display: none; /* hide header icons on mobile */
   }
 
+.mobile-nav-social {
+  display: none;
+  margin-top: 2rem;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .header-social {
+    display: none; /* hide desktop header icons on mobile */
+  }
+
   .mobile-nav-social {
     display: flex; /* show inside hamburger menu */
   }
