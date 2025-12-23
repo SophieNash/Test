@@ -368,7 +368,8 @@ textarea {
     right: 0; /* slide in */
   }
 
-  .nav a {
+  .nav > a {
+    display: block
     padding: 1rem 0;
     font-size: 1.1rem;
     color: #ff69b4;
