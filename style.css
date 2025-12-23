@@ -1,6 +1,5 @@
 /* ------------------- */
 /* Global Styles */
-/* ------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,39 +19,47 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo+nav left, hamburger right */
-  width: 100%;
+  justify-content: space-between;
   padding: 1rem 2rem;
   background: #ffffff;
   color: #333;
   position: sticky;
   top: 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1005;
-}
-
-/* New container for logo + nav */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem; /* space between logo and nav */
-  flex-shrink: 0;
+  z-index: 1001;
 }
 
 /* Logo */
 .logo img {
-  height: 80px; /* bigger logo */
+  height: 80px;
   width: auto;
   display: block;
   max-width: 100%;
+}
+
+/* Desktop social icons */
+.header-social {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-social a i {
+  font-size: 18px;
+  color: #ff69b4;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header-social a:hover i {
+  transform: scale(1.2);
+  color: #ff4081;
 }
 
 /* Navigation links (desktop) */
 .nav {
   display: flex;
   gap: 1rem;
-  margin-left: 2rem; /* moves nav closer to logo */
-  position: relative; /* needed for underline animation */
+  margin-left: 2rem;
+  position: relative;
 }
 
 .nav a {
@@ -60,18 +67,10 @@ body {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  position: relative; /* needed for ::after */
+  position: relative;
   transition: all 0.3s ease;
 }
 
-/* Nav link hover animation (desktop + mobile) */
-.nav a:hover {
-  transform: scale(1.05);
-  color: #ff4081; /* matches active link color */
-}
-
-
-/* Underline hover + active */
 .nav a::after {
   content: '';
   position: absolute;
@@ -89,7 +88,6 @@ body {
   width: 80%;
 }
 
-/* Active page text color (optional) */
 .nav a.active {
   color: #ff4081;
 }
@@ -102,27 +100,6 @@ body {
   font-size: 1.8rem;
   color: #ff69b4;
   cursor: pointer;
-  z-index: 1010;
-}
-
-/* ------------------- */
-/* Mobile Menu Overlay */
-.mobile-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.mobile-overlay.show {
-  display: block;
-  opacity: 1;
 }
 
 /* ------------------- */
@@ -196,6 +173,7 @@ body {
   margin-top: 2rem;
 }
 
+/* Cards stack vertically on mobile by default, will fix later */
 .card {
   padding: 1.5rem;
   border-radius: 10px;
@@ -231,215 +209,71 @@ textarea {
 /* ------------------- */
 /* Footer */
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 2rem;
-  background: #ffe6f0; /* soft pink background to match page */
+  text-align: center;
+  padding: 1.5rem;
+  background: #ffd1e8;
   color: #333;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
-/* Footer sections */
-.footer-left,
-.footer-center,
-.footer-right {
-  display: flex;
-  align-items: center;
-}
-
-/* Center logo */
-.footer-center {
-  justify-content: center;
-  flex: 1;
-}
-
-.footer-logo {
-  height: 80px;
+.footer-logo img {
+  height: 60px;
   width: auto;
 }
 
-/* Social links */
-.header-right {
+.footer-social {
+  margin-top: 0.5rem;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.header-social {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.header-social .social-link i {
-  font-size: 18px;
-  color: #ff69b4;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.header-social .social-link:hover i {
-  transform: scale(1.2);
-  color: #ff4081;
-}
-
-.footer-right {
-  gap: 0.5rem;
-}
-
-.footer-right p {
-  margin-right: 0.5rem;
-  font-weight: bold;
-}
-
-.social-icon {
-  font-size: 24px;
-  color: #333;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-link:hover .social-icon {
-  transform: scale(1.2);
-  color: #ff4081; /* optional hover color */
-}
-/* Mobile nav social */
-.mobile-nav-social {
-  display: none; /* hide on desktop */
-  margin-top: 2rem;
-  gap: 1rem;
   justify-content: center;
+  gap: 1rem;
 }
 
-.mobile-nav-social .social-link i {
+.footer-social a i {
   font-size: 20px;
   color: #ff69b4;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.mobile-nav-social .social-link:hover i {
-  transform: scale(1.2);
-  color: #ff4081;
 }
 
 /* ------------------- */
 /* Mobile Styles */
-/* Mobile Styles (fixed) */
 @media (max-width: 768px) {
 
-  /* Hamburger button */
-  /* Show hamburger only */
   .menu-toggle {
     display: block;
   }
-  .header-social {
-    display: none; /* hide header icons on mobile */
-  }
 
-  /* Hide desktop social icons */
-.mobile-nav-social {
-  display: none;
-  margin-top: 2rem;
-  gap: 1rem;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  /* Hide header social icons on mobile */
-  .header-social {
-    display: none; /* hide desktop header icons on mobile */
-    display: none;
-  }
-
-  /* Full-screen mobile nav */
-  .mobile-nav-social {
-    display: flex; /* show inside hamburger menu */
-  }
-}
-  /* Mobile nav offscreen initially */
-  /* Full‑screen mobile nav */
+  /* Mobile nav offscreen initially, full screen */
   .nav {
-    display: flex;
     flex-direction: column;
-    justify-content: center;   /* vertical center */
-    align-items: center;       /* horizontal center */
-    justify-content: center;   /* vertically center links */
-    align-items: center;       /* horizontally center */
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
-    right: -100%;              /* offscreen initially */
-    right: -250px; /* start offscreen */
-    width: 250px;
-    right: -100%;              /* start offscreen right */
+    right: -100%;
     width: 100%;
     height: 100%;
-    padding: 2rem 1rem;
-    padding: 0;                /* remove padding for full cover */
     background: #fff;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-    z-index: 1002;
-    transition: right 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    justify-content: flex-start; /* links at top */
     z-index: 1005;
     transition: right 0.3s ease;
-    overflow: hidden;
   }
 
-  /* Slide menu in */
   .nav.show {
-    right: 0; /* slide in */
     right: 0;
   }
 
-  /* Mobile links with fade-in stagger */
-  /* Mobile nav links */
   .nav > a {
-    display: block
-    padding: 1rem 0;
-    font-size: 1.1rem;
     display: block;
     width: 100%;
     text-align: center;
     padding: 1.5rem 0;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: #ff69b4;
     text-decoration: none;
-    position: relative;
-    opacity: 0;              /* start invisible */
-    transform: translateY(20px);
-    animation: fadeInLink 0.5s forwards;
-    position: relative; /* needed for ::after underline */
   }
 
-  /* Stagger delays */
-  .nav.show > a:nth-child(1) { animation-delay: 0.1s; }
-  .nav.show > a:nth-child(2) { animation-delay: 0.2s; }
-  .nav.show > a:nth-child(3) { animation-delay: 0.3s; }
-  .nav.show > a:nth-child(4) { animation-delay: 0.4s; }
-  .nav.show > a:nth-child(5) { animation-delay: 0.5s; }
-
-  @keyframes fadeInLink {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  /* Mobile active page highlight */
-  .nav a.active {
-    color: #ff4081
-    text-decoration: none;
-    position: relative;
-  }
-
-  /* Active page underline */
   .nav a.active::after {
-        content: '';
-  /* Active page underline + hover */
-  .nav a::after {
     content: '';
     position: absolute;
-    width: 0; /* underline for active link */
-    width: 0;
+    width: 60%;
     height: 2px;
-    bottom: 0;
     bottom: -6px;
     left: 50%;
     background-color: #ff69b4;
@@ -447,46 +281,17 @@ textarea {
     transition: width 0.3s ease;
   }
 
-    .nav a:hover::after,
-  .nav a:hover::after,
-  .nav a.active::after {
-    width: 80%;
+  .nav a:hover::after {
     width: 60%;
   }
 
-  .nav a.active {
-    color: #ff4081;
-  }
-
-  /* Mobile social icons at bottom */
-  /* Social icons at bottom of menu */
-  .mobile-nav-social {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .mobile-nav-social .social-link i {
-    font-size: 26px;
-    color: #ff69b4;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .mobile-nav-social .social-link:hover i {
-    transform: scale(1.3);
-    color: #ff4081;
-  }
-}
-
-  /* Overlay */
-    /* Overlay behind menu */
-  /* Mobile overlay behind menu */
-  .mobile-overlay {
+  /* Hide desktop social icons on mobile */
+  .header-social {
     display: none;
+  }
+
+  /* Overlay behind menu */
+  .mobile-overlay {
     display: block;
     position: fixed;
     top: 0;
@@ -500,12 +305,10 @@ textarea {
   }
 
   .mobile-overlay.show {
-    display: block;
     opacity: 1;
   }
-}
 
-  /* Cards stack vertically on mobile */
+  /* Cards stack vertically */
   .cards {
     grid-template-columns: 1fr;
   }
