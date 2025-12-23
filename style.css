@@ -231,15 +231,54 @@ textarea {
 /* ------------------- */
 /* Footer */
 .footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #333;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: #ffe6f0; /* soft pink background to match page */
+  color: #333;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.disclaimer {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
+/* Footer sections */
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Center logo */
+.footer-center {
+  justify-content: center;
+  flex: 1;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Social links */
+.footer-right {
+  gap: 0.5rem;
+}
+
+.footer-right p {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.social-icon {
+  height: 24px;
+  width: 24px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.2);
 }
 
 /* ------------------- */
