@@ -17,7 +17,6 @@ body {
 
 /* ------------------- */
 /* Header */
-/* ------------------- */
 .header {
   display: flex;
   align-items: center;
@@ -30,24 +29,20 @@ body {
   z-index: 1001;
 }
 
-.nav{
-  display: flex;
-  gap: 1rem;
-  margin-left: 2rem; /*moves nav closer to the logo */
-}
-
+/* Logo */
 .logo img {
-  height: 80px;
+  height: 80px; /* bigger logo */
   width: auto;
   display: block;
-  max-width: 100%
+  max-width: 100%;
 }
 
-/* Navigation Links */
+/* Navigation links (desktop) */
 .nav {
   display: flex;
   gap: 1rem;
-  transition: all 0.3s ease;
+  margin-left: 2rem; /* moves nav closer to logo */
+  position: relative; /* needed for underline animation */
 }
 
 .nav a {
@@ -55,10 +50,11 @@ body {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  position: relative;
+  position: relative; /* needed for ::after */
   transition: all 0.3s ease;
 }
 
+/* Underline hover + active */
 .nav a::after {
   content: '';
   position: absolute;
@@ -71,11 +67,13 @@ body {
   transform: translateX(-50%);
 }
 
-.nav a:hover::after {
+.nav a:hover::after,
+.nav a.active::after {
   width: 80%;
 }
 
-.nav a:hover {
+/* Active page text color (optional) */
+.nav a.active {
   color: #ff4081;
 }
 
