@@ -55,6 +55,13 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Nav link hover animation (desktop + mobile) */
+.nav a:hover {
+  transform: scale(1.05);
+  color: #ff4081; /* matches active link color */
+}
+
+
 /* Underline hover + active */
 .nav a::after {
   content: '';
@@ -267,13 +274,20 @@ textarea {
   .nav a.active::after {
         content: '';
     position: absolute;
-    width: 80%; /* underline for active link */
+    width: 0; /* underline for active link */
     height: 2px;
     bottom: 0;
     left: 50%;
     background-color: #ff69b4;
     transform: translateX(-50%);
+    transition: width 0.3s ease;
   }
+
+    .nav a:hover::after,
+  .nav a.active::after {
+    width: 80%;
+  }
+}
 
     /* Overlay behind menu */
   .mobile-overlay {
